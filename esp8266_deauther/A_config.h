@@ -87,31 +87,64 @@
   #define BUTTON_A 2     // D4
   #define BUTTON_B 0     // D3
 
-// https://github.com/SpacehuhnTech/esp8266_deauther/wiki/Setup-Display-&-Buttons#example-setup-with-i2c-oled
+
+
+
+
+
+
+
+
 #elif defined(DISPLAY_EXAMPLE_I2C)
 
-// ===== DISPLAY ===== //
-  #define SH1106_I2C
-// #define SSD1306_I2C
+// ===== 屏幕 ===== //
+  #define SSD1306_I2C
 
   #define I2C_ADDR 0x3C
   #define I2C_SDA 5
   #define I2C_SCL 4
 
-// #define FLIP_DIPLAY true
+  #define FLIP_DIPLAY true
 
-// ===== BUTTONS ===== //
-  #define BUTTON_UP 14
-  #define BUTTON_DOWN 12
-  #define BUTTON_A 13
+  #define DISPLAY_TIMEOUT 30
 
-// ===== LED ===== //
-  #define LED_NEOPIXEL_GRB
-// #define LED_NEOPIXEL_RGB
+  #define DISPLAY_TEXT "By CN-Sure"
+
+// ===== 按钮 ===== //
+  #define BUTTON_UP 12
+  #define BUTTON_DOWN 13
+  #define BUTTON_A 14
+  #define BUTTON_B 10
+  
+// ===== RGB灯 ===== //
+  // #define LED_NEOPIXEL_GRB
+  #define LED_NEOPIXEL_RGB
 
   #define LED_NUM 1
-  #define LED_NEOPIXEL_PIN 9
-  #define LED_MODE_BRIGHTNESS 10
+  #define LED_NEOPIXEL_PIN 15
+  #define LED_MODE_BRIGHTNESS 30
+
+  #define LED_MODE_OFF 0, 0, 0
+  #define LED_MODE_SCAN 0, 125, 255  // G R B
+  #define LED_MODE_ATTACK 0, 255, 0
+  #define LED_MODE_IDLE 255, 0, 125
+  
+// ===== WiFi接入点 ===== //
+  #define AP_SSID "SB临淄中学"
+  #define AP_PASSWD "FackLZZX"
+
+// ===== 网页后台语言设置 ===== //
+  #define DEFAULT_LANG "cn"
+
+// ===== 攻击超时设置 ===== //
+  #define ATTACK_TIMEOUT 0
+
+
+
+
+
+
+
 
 
 // https://github.com/SpacehuhnTech/esp8266_deauther/wiki/Setup-Display-&-Buttons#example-setup-with-spi-oled
@@ -279,7 +312,7 @@
 // ===== DISPLAY ===== //
   #define SH1106_I2C
   #define FLIP_DIPLAY true
-  #define DISPLAY_TEXT "Hardware by DSTIKE"
+  #define DISPLAY_TEXT "HdWare by SuperB"
 
   #define RTC_DS3231
 
@@ -287,6 +320,7 @@
   #define BUTTON_UP 12
   #define BUTTON_DOWN 13
   #define BUTTON_A 14
+
 
 #elif defined(DSTIKE_USB_DEAUTHER_V2)
 
